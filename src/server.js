@@ -1,14 +1,16 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
-const app = express();
 const indexRouter = require("./routes/index");
 const postRouter = require("./routes/post");
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/x-b");
 
+const app = express();
 app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(expressLayouts);
 
 app.set("layout", path.join(__dirname, "views", "layouts", "layout"));

@@ -1,1 +1,24 @@
-<h1>Write Post Page</h1>
+<form action="/post/" method="post">
+  <div class="mb-3">
+    <input
+      class="form-control"
+      type="text"
+      name="title"
+      id="title"
+      placeholder="Title..."
+    />
+  </div>
+  <div class="mb-3">
+    <textarea
+      class="form-control"
+      name="body"
+      id="body"
+      placeholder="Tell your story..."
+      rows="10"
+    ></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">
+    <i class="fa-solid fa-file-arrow-up"></i>
+    Publish
+  </button>
+</form>
