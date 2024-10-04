@@ -4,6 +4,9 @@ const path = require("path");
 const app = express();
 const indexRouter = require("./routes/index");
 const postRouter = require("./routes/post");
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/x-b");
 
 app.use(express.static("public"));
 app.use(expressLayouts);

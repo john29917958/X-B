@@ -1,6 +1,8 @@
 "use strict";
 
 (function () {
+  return;
+
   window.onload = main;
 
   function main() {
