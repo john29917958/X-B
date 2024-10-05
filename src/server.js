@@ -1,4 +1,5 @@
 const express = require("express");
+const expressSession = require("express-session");
 const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
 const indexRouter = require("./routes/index");
@@ -11,6 +12,7 @@ mongoose.connect("mongodb://localhost:27017/x-b");
 const app = express();
 app.use(express.static("public"));
 app.use(express.json());
+app.use(expressSession({ secret: "keyboard cat" }));
 app.use(express.urlencoded());
 app.use(expressLayouts);
 
