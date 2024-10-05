@@ -21,6 +21,7 @@ exports.create = asyncHandler(async (req, res) => {
 exports.store = asyncHandler(async (req, res) => {
   Post.create({
     ...req.body,
+    createdAt: new Date(),
   }).then((post) => {
     res.render("pages/post/show", { title: post.title, post: post });
   });
