@@ -18,17 +18,17 @@ exports.create = asyncHandler(async (req, res) => {
   });
 });
 
-exports.show = asyncHandler(async (req, res) => {
-  const post = await Post.findById(req.params.id);
-  res.render("pages/post/show", { title: post.title, post: post });
-});
-
 exports.store = asyncHandler(async (req, res) => {
   Post.create({
     ...req.body,
   }).then((post) => {
     res.render("pages/post/show", { title: post.title, post: post });
   });
+});
+
+exports.show = asyncHandler(async (req, res) => {
+  const post = await Post.findById(req.params.id);
+  res.render("pages/post/show", { title: post.title, post: post });
 });
 
 exports.destroy = asyncHandler(async (req, res) => {
