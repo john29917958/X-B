@@ -9,7 +9,13 @@ exports.index = asyncHandler(async (req, res) => {
 });
 
 exports.create = asyncHandler(async (req, res) => {
-  res.render("pages/post/create", { title: "New Post" });
+  res.render("pages/post/create", {
+    title: "New Post",
+    scripts: [
+      "https://code.jquery.com/jquery-3.5.1.min.js",
+      "https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js",
+    ],
+  });
 });
 
 exports.show = asyncHandler(async (req, res) => {
