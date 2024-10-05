@@ -3,6 +3,7 @@ const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
 const indexRouter = require("./routes/index");
 const postRouter = require("./routes/post");
+const accountRouter = require("./routes/account");
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/x-b");
@@ -22,6 +23,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use("/", indexRouter);
 app.use("/post", postRouter);
+app.use("/account", accountRouter);
 
 const server = app.listen(3000, () => {
   const host = server.address().address;
