@@ -24,3 +24,8 @@ exports.store = asyncHandler(async (req, res) => {
     res.render("pages/post/show", { title: post.title, post: post });
   });
 });
+
+exports.destroy = asyncHandler(async (req, res) => {
+  await Post.findByIdAndDelete(req.params.id);
+  res.redirect("/post/");
+});
